@@ -1,0 +1,35 @@
+National Collision Database 1999 to 2017
+Source: https://opendatatc.blob.core.windows.net/opendatatc/NCDB_1999_to_2017.csv
+
+Let’s now take a look at our dataset attributes and understand their meaning and significance.
+
+Data element	Type	Code	Definition
+C_YEAR	int64	19yy-20yy	Year of the collision
+C_MNTH	int64	01-12, UU, XX	Month of the collision
+C_WDAY	int64	1-7, U, X	Weekday of the collision
+C_HOUR	int64	00-23, UU, XX	Hour of the collision
+C_SEV	category	1,2, U, X	The collision severity
+1: Collision producing at least one fatality
+2: Collision producing non-fatal injury)
+C_VEHS	int64	1-98,99, UU, XX	Number of vehicles involved in collision
+C_CONF	category	01-06 , 21-25 , 31-36 , 41 , QQ, UU, XX	Collision configuration
+C_RCFG	category	01-12 , QQ, UU, XX	Roadway configuration
+C_WTHR	category	1-7 , Q , U , X	Weather condition
+C_RSUR	category	1-9 , Q , U , X	Road surface
+C_RALN	category	1-6 , Q , U , X	Road alignment
+C_TRAF	category	01-18, UU, XX	Traffic control
+V_ID	int64	1-98,99, UU	Vehicle sequence number
+V_TYPE	category	00-23, NN, QQ, UU, XX	Vehicle type
+V_YEAR	int64	19yy-20yy , NNNN , UUUU , XXXX	Vehicle model year
+P_ID	int64	01 - 99 , NN , UU	Person sequence number
+P_SEX	category	F , M , N , U , X	Person sex
+P_AGE	int64	00 , 01 – 98 , 99 , NN , UU , XX	Person age
+P_PSN	category	11-13 , 21-23 , 31-33 , 96-99 , NN, QQ, UU, XX	Person position
+P_ISEV	category	1-3 , N , U , X	Medical treatment required
+1: No Injury
+2: Injury
+3: Fatality
+P_SAFE	category	01 , 02 , 09-13 , NN, QQ, UU, XX	Safety device used
+P_USER	category	1-5 , U	Road user class
+C_CASE	int64	a number, starting from 752	seems to be the index of data
+We have a total of 22 features and our objective is to predict the dependency of the sevirity of a collison (P_ISEV) to these features we will be building and interpreting a classification model.
